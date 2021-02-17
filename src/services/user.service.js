@@ -2,7 +2,7 @@ import axios from 'axios';
 import authHeader from './auth-header';
 
 //const API_URL = 'http://localhost:8080/api/test/';
-const API_URL = 'https://jwtautentication.herokuapp.com/api/test/'
+const API_URL = 'https://jwtautentication.herokuapp.com:8080/api/test/'
 
 class UserService {
   getPublicContent() {
