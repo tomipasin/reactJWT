@@ -26,7 +26,8 @@ export default class Login extends Component {
       username: "",
       password: "",
       loading: false,
-      message: ""
+      message: "",
+      picture:'https://images.assetsdelivery.com/compings_v2/putracetol/putracetol1808/putracetol180800305.jpg'
     };
   }
 
@@ -84,7 +85,7 @@ export default class Login extends Component {
       <div className="col-md-12">
         <div className="card card-container">
           <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+            src={this.state.picture}
             alt="profile-img"
             className="profile-img-card"
           />

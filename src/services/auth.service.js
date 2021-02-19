@@ -1,7 +1,7 @@
 import axios from "axios";
 
-//const API_URL = "http://localhost:8080/api/auth/";
-const API_URL = 'https://jwtautentication.herokuapp.com:8080/api/auth/'
+const API_URL = "http://localhost:8080/api/auth/";
+
 
 
 class AuthService {
@@ -14,6 +14,7 @@ class AuthService {
       .then(response => {
         if (response.data.accessToken) {
           localStorage.setItem("user", JSON.stringify(response.data));
+          
         }
 
         return response.data;
@@ -24,16 +25,17 @@ class AuthService {
     localStorage.removeItem("user");
   }
 
-  register(username, email, password) {
+  register(username, email, password, picture) {
     return axios.post(API_URL + "signup", {
       username,
       email,
-      password
+      password,
+      picture,
     });
   }
 
   getCurrentUser() {
-    return JSON.parse(localStorage.getItem('user'));;
+    return JSON.parse(localStorage.getItem('user'));
   }
 }
 

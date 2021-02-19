@@ -54,14 +54,24 @@ export default class Register extends Component {
     this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
 
+    this.onChangePic = this.onChangePic.bind(this);
+
     this.state = {
       username: "",
       email: "",
       password: "",
       successful: false,
-      message: ""
+      message: "",
+      picture:""
     };
   }
+
+  onChangePic(e) {
+    this.setState({
+      picture: e.target.value
+    });
+  }
+
 
   onChangeUsername(e) {
     this.setState({
@@ -95,7 +105,8 @@ export default class Register extends Component {
       AuthService.register(
         this.state.username,
         this.state.email,
-        this.state.password
+        this.state.password,
+        this.state.picture,
       ).then(
         response => {
           this.setState({
@@ -173,6 +184,21 @@ export default class Register extends Component {
                     validations={[required, vpassword]}
                   />
                 </div>
+
+
+                <div className="form-group">
+                  <label htmlFor="picture">Picture URL:</label>
+                  <Input
+                    type="text"
+                    className="form-control"
+                    name="picture"
+                    value={this.state.picture}
+                    onChange={this.onChangePic}
+                    
+                  />
+                </div>
+
+
 
                 <div className="form-group">
                   <button className="btn btn-primary btn-block">Sign Up</button>

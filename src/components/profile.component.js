@@ -12,13 +12,20 @@ export default class Profile extends Component {
 
   render() {
     const { currentUser } = this.state;
+    //console.log(currentUser)
 
     return (
       <div className="container">
         <header className="jumbotron">
+          
+          <div className='centerDiv'>
+            <img className='profilePic' src={currentUser.picture}/>
+          </div>
+          
           <h3>
-            <strong>{currentUser.username}</strong> Profile
+           Profile of <strong>{currentUser.username}</strong> 
           </h3>
+          
         </header>
         <p>
           <strong>Token:</strong>{" "}

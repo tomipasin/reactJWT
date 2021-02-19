@@ -69,3 +69,12 @@ label {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
+
+.profilePic {
+  max-height: 150px;
+  
+}
+
+.centerDiv {
+  align-items: center;
+}
