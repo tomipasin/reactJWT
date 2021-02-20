@@ -62,7 +62,7 @@ export default class Register extends Component {
       password: "",
       successful: false,
       message: "",
-      picture:""
+      picture: ""
     };
   }
 
@@ -134,9 +134,9 @@ export default class Register extends Component {
   render() {
     return (
       <div className="col-md-12">
-        <div className="card card-container">
+        <div className="card card-container shadow">
           <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+            src="https://images.assetsdelivery.com/compings_v2/putracetol/putracetol1808/putracetol180800305.jpg"
             alt="profile-img"
             className="profile-img-card"
           />
@@ -187,7 +187,7 @@ export default class Register extends Component {
 
 
                 <div className="form-group">
-                  <label htmlFor="picture">Picture URL:</label>
+                  <label htmlFor="picture">Picture URL (optional):</label>
                   <Input
                     type="text"
                     className="form-control"

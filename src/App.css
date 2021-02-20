@@ -78,3 +78,37 @@ label {
 .centerDiv {
   align-items: center;
 }
+
+body {
+  background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(113,157,255,1) 100%);
+}
+
+.center{
+  text-align: center;
+}
+
+.shadow{
+  box-shadow: 50px;
+}
+
+.round{
+  border-radius: 20px;
+}
+
+.transp{
+  background-color: white;
+  opacity: 50%;
+}
+
+.bccard{
+  background-color: white;
+}
+
+.signup:hover{
+  background-color: yellow;
+}
+
+.titulo{
+  color:black
+}

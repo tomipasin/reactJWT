@@ -46,71 +46,81 @@ class App extends Component {
 
     return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={"/"} className="navbar-brand">
-            Login using NodeJS and ReactJS
-          </Link>
-          <div className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to={"/home"} className="nav-link">
-                Home
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+          <h2 class="navbar-brand titulo">
+          <Link to={"/"} className="nav-link titulo">Tomi's login app</Link></h2>
+
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li className="nav-item">
+                <Link to={"/home"} className="nav-link">
+                  Home
               </Link>
-            </li>
-
-            {showModeratorBoard && (
-              <li className="nav-item">
-                <Link to={"/mod"} className="nav-link">
-                  Moderator Board
-                </Link>
               </li>
-            )}
-
-            {showAdminBoard && (
-              <li className="nav-item">
-                <Link to={"/admin"} className="nav-link">
-                  Admin Board
+              
+                {showModeratorBoard && (
+                  <li className="nav-item">
+                    <Link to={"/mod"} className="nav-link">
+                      Moderator Board
                 </Link>
-              </li>
-            )}
+                  </li>
+                )}
 
-            {currentUser && (
-              <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
-                  User
+                {showAdminBoard && (
+                  <li className="nav-item">
+                    <Link to={"/admin"} className="nav-link">
+                      Admin Board
                 </Link>
-              </li>
-            )}
-          </div>
+                  </li>
+                )}
 
-          {currentUser ? (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/profile"} className="nav-link">
-                  {currentUser.username}
+                {currentUser && (
+                  <li className="nav-item">
+                    <Link to={"/user"} className="nav-link">
+                      Download my CV
                 </Link>
-              </li>
-              <li className="nav-item">
-                <a href="/login" className="nav-link" onClick={this.logOut}>
-                  Logout
+                  </li>
+                )}
+
+                {currentUser ? (
+                  <div className="navbar-nav">
+                    <li className="nav-item">
+                      <Link to={"/profile"} className="nav-link">
+                        {currentUser.username}
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <a href="/login" className="nav-link" onClick={this.logOut}>
+                        Logout
                 </a>
-              </li>
-            </div>
-          ) : (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/login"} className="nav-link">
-                  Login
+                    </li>
+                  </div>
+                ) : (
+                    <>
+                      <li className="nav-item">
+                        <Link to={"/login"} className="nav-link">
+                          Login
                 </Link>
-              </li>
+                      </li>
 
-              <li className="nav-item">
-                <Link to={"/register"} className="nav-link">
-                  Sign Up
+                      <li className="nav-item">
+                        <Link to={"/register"} className="nav-link">
+                          Sign Up
                 </Link>
-              </li>
-            </div>
-          )}
+                      </li>
+                    </>
+                  )}
+              </ul>
+          </div>
         </nav>
+
+       
 
         <div className="container mt-3">
           <Switch>

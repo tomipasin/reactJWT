@@ -16,35 +16,37 @@ export default class Profile extends Component {
 
     return (
       <div className="container">
-        <header className="jumbotron">
+        <header className="jumbotron shadow bccard">
           
-          <div className='centerDiv'>
-            <img className='profilePic' src={currentUser.picture}/>
+          <div className='centerDiv center'>
+            <img className='profilePic shadow round' src={currentUser.picture}/>
           </div>
           
           <h3>
-           Profile of <strong>{currentUser.username}</strong> 
+           This is your profile, <strong>{currentUser.username}</strong> 
           </h3>
-          
-        </header>
-        <p>
-          <strong>Token:</strong>{" "}
+
+          <p>
+          <strong>Here are some parts of your JWT Token:</strong>{" "}
           {currentUser.accessToken.substring(0, 20)} ...{" "}
           {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
         </p>
         <p>
-          <strong>Id:</strong>{" "}
+          <strong>Your MongoDB Id is:</strong>{" "}
           {currentUser.id}
         </p>
         <p>
-          <strong>Email:</strong>{" "}
+          <strong>The email you declared is:</strong>{" "}
           {currentUser.email}
         </p>
-        <strong>Authorities:</strong>
+        <strong>And here you are set unde this role:</strong>
         <ul>
           {currentUser.roles &&
             currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
         </ul>
+          
+        </header>
+       
       </div>
     );
   }
