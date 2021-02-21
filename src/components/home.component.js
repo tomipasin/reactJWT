@@ -44,7 +44,14 @@ export default class Home extends Component {
         <h3>NodeJS + MongoDB + ReactJS</h3>
          <h4>system to download my CV.</h4> 
          <hr></hr>
-          <h6>Please go to <a href="http://localhost:8081/register" className="signup">"Sign Up"</a> item on Navbar and create your user to access the download link.</h6>
+          <h6>Follow this steps to download my CV:</h6>
+            <ol className="left">
+              <li>Sign up by creating an user and password;</li>
+              <li>Log in;</li>
+              <li>Click on "Download my CV" menu and choose the language you want.</li>
+
+            </ol>
+          
         </header>
         
       </div>
